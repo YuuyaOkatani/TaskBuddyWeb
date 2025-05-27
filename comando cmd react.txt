@@ -1,0 +1,38 @@
+npx expo install firebase 
+npx expo install firebase-tools -- -g
+npx expo install @react-navigation/native
+npx expo install @react-navigation/native-stack
+npx expo install @react-navigation/bottom-tabs
+npx expo install expo-router react-native-safe-area-context react-native-screens expo-linking expo-constants expo-status-bar react-native-gesture-handler
+npx expo install @react-native-firebase/auth
+npx expo install @react-native-firebase/app
+npx expo install @react-native-async-storage/async-storage
+npm install -g eas-cli
+npx expo install universal-cookie
+npx expo install expo-image-picker
+npx expo install expo-google-sign-in // não funciona
+npx expo install expo-web-browser
+npx expo install expo-auth-session expo-crypto
+expo-auth-session/providers-google
+expo-web-browser
+npx expo install @react-native-google-signin/google-signin /// não precisa mais 
+npx expo install react-native-web@~0.18.10 react-dom@18.2.0 @expo/webpack-config@^18.0.1
+
+npx expo customize metro.config.js
+
+npx expo prebuild /// instala o pacote andoird
+eas build --profile development --platform android
+eas build -p android --profile preview
+eas build --platform android
+eas build -p android
+eas init
+
+eas build:configure
+eas credentials
+firebase init
+firebase login 
+
+
+npx expo start --dev-client
+npx expo install expo-dev-client 
+
