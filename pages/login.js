@@ -34,7 +34,6 @@ const Screen1 = () => {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         navigation.navigate("usuario");
-        console.log("Logged with: ", firebase.auth().currentUser.email);
       } else {
       }
     });
@@ -52,7 +51,6 @@ const Screen1 = () => {
       .signInWithEmailAndPassword(email, password)
       .then((userCredentials) => {
         const user = userCredentials.user;
-        console.log("Logged with: ", user.email);
 
         navigation.navigate("usuario");
       })
@@ -69,7 +67,6 @@ const Screen1 = () => {
   const GoogleLogin = async (e) => {
     const provider = await new GoogleAuthProvider();
     const respond = await signInWithPopup(auth, provider);
-    console.log(auth.currentUser.email);
     if (auth.currentUser.email) {
       /// adicionei o if para não ativar a função de criar um novo documento antes de fazer um login com google
       await getDocs(query(usersCollectionRef)).then((newdocsnap) => {
@@ -99,11 +96,10 @@ const Screen1 = () => {
           })
             .then((userCredentials) => {
               const userC = userCredentials.user;
-              console.log("Logged with: ", userC.email);
               navigation.navigate("usuario");
             })
             .catch((error) => {
-              console.log(error);
+              alert("Algo deu errado");
             });
         }
       });

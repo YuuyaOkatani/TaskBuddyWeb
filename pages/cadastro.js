@@ -79,26 +79,22 @@ const Screen2 = () => {
                     .signInWithEmailAndPassword(email, password)
                     .then((userCredentials) => {
                       const userC = userCredentials.user;
-                      console.log("Logged with: ", userC.email);
                       navigation.navigate("usuario");
                     })
                 )
                 .catch((error) => {
-                  console.log(error);
+                  alert("Algo deu errado");
                 });
             } else {
-              console.log("A senha deve ter pelo menos 8 caracteres");
               alert("A senha deve ter pelo menos 8 caracteres");
             }
           } else {
             alert(" A senha está um pouco diferente...");
-            console.log("A senha está um pouco diferente...");
           }
         } else {
           alert("coloque um email valido");
         }
       } else {
-        console.log("Este email já está sendo usado");
         alert("Este email já está sendo usado");
       }
     });
