@@ -73,14 +73,20 @@ const Screen2 = () => {
                     .auth()
                     .createUserWithEmailAndPassword(email, password)
                 )
-                .then(() =>
-                  firebase
-                    .auth()
-                    .signInWithEmailAndPassword(email, password)
-                    .then((userCredentials) => {
-                      const userC = userCredentials.user;
-                      navigation.navigate("usuario");
-                    })
+                .then(
+                  () =>
+                    firebase
+                      .auth()
+                      .signInWithEmailAndPassword(email, password)
+                      .then((userCredentials) => {
+                        const userC = userCredentials.user;
+                        navigation.navigate("usuario");
+                      }),
+
+                  setNewName(""),
+                  setPassword(""),
+                  setPasswordApproval(""),
+                  setEmail("")
                 )
                 .catch((error) => {
                   alert("Algo deu errado");
@@ -110,21 +116,18 @@ const Screen2 = () => {
       <Image source={require("../img/icon2.png")} style={styles.img} />
       <TextInput
         style={styles.input}
-        value={newName}
         placeholder="Nome..."
         onChangeText={(event) => setNewName(event)}
       />
 
       <TextInput
         style={styles.input}
-        value={email}
         placeholder="email..."
         onChangeText={(event) => setEmail(event)}
       />
 
       <TextInput
         style={styles.input}
-        value={password}
         textContentType="password"
         secureTextEntry={true}
         placeholder="Senha..."
@@ -133,7 +136,6 @@ const Screen2 = () => {
 
       <TextInput
         style={styles.input}
-        value={passwordApproval}
         textContentType="password"
         secureTextEntry={true}
         placeholder="Confirmar Senha..."

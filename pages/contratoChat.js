@@ -78,10 +78,10 @@ const Screen5 = ({ route }) => {
                             <Text>{user2.name}: {item.text} </Text> 
                          </View>*/
                   <View style={styles.msg2}>
-                    {user2.photo ? (
+                    {user2.photo.startsWith("htt") ? (
                       <Image
                         source={{
-                          uri: `data:image/jpeg;base64,${user2.photo}`,
+                          uri: user2.photo,
                         }}
                         style={styles.imgperfil2}
                         alt="avatar"
@@ -89,7 +89,9 @@ const Screen5 = ({ route }) => {
                       />
                     ) : (
                       <Image
-                        source={{ uri: user2.photo }}
+                        source={{
+                          uri: `data:image/jpeg;base64,${user2.photo}`,
+                        }}
                         style={styles.imgperfil2}
                         alt="avatar"
                         resizeMode="cover"
@@ -101,16 +103,16 @@ const Screen5 = ({ route }) => {
                   </View>
                 ) : (
                   <View style={styles.containerFourth}>
-                    {user.photo ? (
+                    {user.photo.startsWith("htt") ? (
                       <Image
-                        source={{ uri: `data:image/jpeg;base64,${user.photo}` }}
+                        source={{ uri: user.photo }}
                         style={styles.imgperfil}
                         alt="avatar"
                         resizeMode="cover"
                       />
                     ) : (
                       <Image
-                        source={{ uri: user.photo }}
+                        source={{ uri: `data:image/jpeg;base64,${user.photo}` }}
                         style={styles.imgperfil}
                         alt="avatar"
                         resizeMode="cover"

@@ -215,24 +215,24 @@ const Screen4 = () => {
           </View>
           <View style={styles.view2}>
             <TextInput
-              style={styles.textstyle}
               value={age}
+              style={styles.textstyle}
               onChangeText={(e) => setAge(e)}
               placeholder="Idade"
             />
           </View>
           <View style={styles.view2}>
             <TextInput
-              style={styles.textstyle}
               value={expec}
+              style={styles.textstyle}
               onChangeText={(e) => setExpec(e)}
               placeholder="Formação"
             />
           </View>
           <View style={styles.view5}>
             <TextInput
-              style={styles.textstyle}
               value={desc}
+              style={styles.textstyle}
               onChangeText={(e) => setDesc(e)}
               placeholder="O que você faz...?"
               multiline={true}
