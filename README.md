@@ -24,7 +24,7 @@ This guide outlines the necessary steps to run the project locally for the web.
 1.  **Clone the repository:**
     Open your terminal or command prompt and navigate to the directory where you want to clone the project. Run the following command:
     ```bash
-    git clone [<REPOSITORY_URL>](https://github.com/YuuyaOkatani/TaskBuddyWeb.git)
+    git clone https://github.com/YuuyaOkatani/TaskBuddyWeb.git
     ```
 
 
