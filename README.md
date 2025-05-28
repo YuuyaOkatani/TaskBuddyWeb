@@ -36,7 +36,7 @@ This guide outlines the necessary steps to run the project locally for the web.
    
     Then, install the project dependencies using npm:
     ```bash
-    npm i --lecagy-peer-deps
+    npm i --legacy-peer-deps
     ```
     This command will download and install all the libraries listed in the `package.json` file.
 
